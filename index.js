@@ -24,6 +24,8 @@ function getRandomArbitrary(min, max) {
 }
 bot.on('login',function(){
 	console.log("Logged In")
+        bot.chat("/register larkana786 larkana786");
+        bot.chat("/login larkana786");
 });
 bot.on('time', function() {
     if (connected <1) {
@@ -55,5 +57,9 @@ bot.on('time', function() {
 
 bot.on('spawn',function() {
     connected=1;
+});
+
+bot.on('death',function() {
+    bot.emit("respawn")
 });
 
